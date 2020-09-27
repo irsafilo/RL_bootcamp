@@ -1,3 +1,27 @@
+# Инструкция запуска на ноуте (linux + видеокарта)
+
+1) Скачать start_laptoop.sh
+2) Выполнить 
+  ```sudo bash start_laptoop.sh```
+Будет происходить загрузка необходимых библиотек. Время выполнения ~ 2 часа.
+Затем нужно будет перейти в директории football, которая будет создана после запуска предыдущего скрипта,
+и активировать окружение следующими командами.
+  ```
+  cd football
+  source football-env/bin/activate
+  ```
+При ошибке с библиотекой absl  доставить :
+  ```sudo pip3 install absl-py```
+  
+ 3) Проверка рендеринга игры
+ 
+ ```
+ MESA_GL_VERSION_OVERRIDE=3.2 MESA_GLSL_VERSION_OVERRIDE=150
+ python3 -m gfootball.play_game --action_set=full
+ ```
+ 
+
+
 # Инструкция запуска на виртуальной машине
 
 1) Скачать start.sh
@@ -62,29 +86,3 @@ python3 -m gfootball.play_game --players
 в строчке ```flags.DEFINE_enum('policy', ...)``` 
 надо добавить название своей архитектуры модели
  
-# Инструкция запуска на ноуте (linux + видеокарта)
-
-1) Скачать start_nt.sh
-2) Выполнить 
-  ```sudo bash start.sh```
-Будет происходить загрузка необходимых библиотек. Время выполнения ~ 2 часа.
-Затем нужно будет перейти в директории football, которая будет создана после запуска предыдущего скрипта,
-и активировать окружение следующими командами.
-  ```
-  cd football
-  source football-env/bin/activate
-  ```
-При ошибке с absl либой доставить :
-  ```sudo pip3 install absl-py```
-  
- 3) Проверка рендеринга игры
- 
- ```
- MESA_GL_VERSION_OVERRIDE=3.2 MESA_GLSL_VERSION_OVERRIDE=150
- python3 -m gfootball.play_game --action_set=full
- ```
- 
-
-
-
-
