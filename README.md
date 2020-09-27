@@ -4,6 +4,8 @@
 1) Запустить sudo start.sh
 
 ```cd football```
+
+
 ```source football-env/bin/activate```
 
 ******************
