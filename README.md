@@ -52,14 +52,14 @@ python3 -m gfootball.play_game --players "ppo2_cnn:left_players=1,policy=gfootba
 python3 -m gfootball.play_game --players 
 "keyboard:left_players=1;ppo2_cnn:right_players=1,policy=cnn,checkpoint=/tmp/openai-{дата-время}/checkpoints/{шаг}"
 ```
-Все команды нужно запускать, находясь в директории /football/.
+Все команды нужно запускать, находясь в директории ```/football/```.
 
 5) Как сделать свою архитектуру?
-/football/gfootball/examples/models.py - это файлик для регистрации моделей в рамках PPO2.
-Пример gfootball_impala_cnn, my_gfootball_impala_cnn.
+```/football/gfootball/examples/models.py``` - это файлик для регистрации моделей в рамках PPO2.
+Пример **gfootball_impala_cnn, my_gfootball_impala_cnn**.
 Здесь можно менять архитектуры и регистрировать их.
-Также в файлике /football/gfootball/examples/run_ppo2.py
-в строчке flags.DEFINE_enum('policy', ...) 
+Также в файлике ```/football/gfootball/examples/run_ppo2.py```
+в строчке ```flags.DEFINE_enum('policy', ...)``` 
 надо добавить название своей архитектуры модели
  
 # Инструкция запуска на виртуальной ноуте (linux + видеокарта)
