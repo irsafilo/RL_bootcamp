@@ -3,10 +3,10 @@
 
 1) Запустить sudo start.sh
 
-```cd football```
+  ```cd football```
 
 
-```source football-env/bin/activate```
+  ```source football-env/bin/activate```
 
 ******************
 Пример обучения моделей
