@@ -20,27 +20,27 @@ pip3 install .
 python3 -m pip install —upgrade pip setuptools
 pip3 install tensorflow-gpu==1.15.*
 pip3 install dm-sonnet==1.*
+pip3 install git+https://github.com/openai/baselines.git@master
+pip3 install absl-py
 ```
 2) Выполнить 
   ```sudo bash start_laptop.sh```
-Будет происходить загрузка необходимых библиотек. Время выполнения ~ 2 часа.
+Будет происходить загрузка необходимых библиотек. Время выполнения 1-2 часа.
 Затем нужно будет перейти в директории football, которая будет создана после запуска предыдущего скрипта,
 и активировать окружение следующими командами.
   ```
   cd football
   source football-env/bin/activate
   ```
-При ошибке с библиотекой absl  доставить :
-  ```sudo pip3 install absl-py```
   
  3) Проверка рендеринга игры
  
  ```
- MESA_GL_VERSION_OVERRIDE=3.2 MESA_GLSL_VERSION_OVERRIDE=150
+ sudo MESA_GL_VERSION_OVERRIDE=3.2 MESA_GLSL_VERSION_OVERRIDE=150
  python3 -m gfootball.play_game --action_set=full
  ```
  
-
+ В случае проблем с tensorflow может помочь обновление tensorflow-gpu.
 
 # Инструкция запуска на виртуальной машине
 
