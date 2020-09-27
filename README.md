@@ -75,9 +75,10 @@ python3 -m gfootball.play_game --players
   source football-env/bin/activate
   ```
 При ошибке с absl либой доставить :
- 
- ```sudo pip3 install absl-py```
+  ```sudo pip3 install absl-py```
+  
  3) Проверка рендеринга игры
+ 
  ```
  MESA_GL_VERSION_OVERRIDE=3.2 MESA_GLSL_VERSION_OVERRIDE=150
  python3 -m gfootball.play_game --action_set=full
