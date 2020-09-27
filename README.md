@@ -2,10 +2,9 @@
 
 1) Скачать ```start_laptop.sh```
 
-Выполним команду ```cat start_laptop.sh``` чтобы посмотреть содержимое файла.
+Выполним команду ```cat start_laptop.sh``` , чтобы посмотреть содержимое файла.
 
 ``` 
-cat start_laptop.sh
 sudo apt-get update
 sudo apt-get -y install git cmake build-essential libgl1-mesa-dev libsdl2-dev \
 libsdl2-image-dev libsdl2-ttf-dev libsdl2-gfx-dev libboost-all-dev \
@@ -23,10 +22,10 @@ pip3 install dm-sonnet==1.*
 pip3 install git+https://github.com/openai/baselines.git@master
 pip3 install absl-py
 ```
-2) Выполнить 
+2) Выполнить команду
   ```sudo bash start_laptop.sh```
 Будет происходить загрузка необходимых библиотек. Время выполнения 1-2 часа.
-Затем нужно будет перейти в директории football, которая будет создана после запуска предыдущего скрипта,
+Затем нужно будет перейти в директорию football, которая будет создана после запуска предыдущего скрипта,
 и активировать окружение следующими командами.
   ```
   cd football
@@ -39,8 +38,7 @@ pip3 install absl-py
  sudo MESA_GL_VERSION_OVERRIDE=3.2 MESA_GLSL_VERSION_OVERRIDE=150
  python3 -m gfootball.play_game --action_set=full
  ```
- 
- В случае проблем с tensorflow может помочь обновление tensorflow-gpu.
+ В случае проблем с tensorflow может помочь обновление tensorflow-gpu до более новых версий.
 
 # Инструкция запуска на виртуальной машине
 
