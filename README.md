@@ -106,7 +106,7 @@ python3 -m gfootball.play_game --players
 ```
 
 # Полезные материалы
-Репозиторий Google Football Research - https://github.com/google-research/football
-Полезная статья - https://towardsdatascience.com/reproducing-google-research-football-rl-results-ac75cf17190e
-Форум https://groups.google.com/g/google-research-football
-Описание policy PPO2 - https://openai.com/blog/openai-baselines-ppo/#ppo
+- Репозиторий Google Football Research - https://github.com/google-research/football
+- Полезная статья - https://towardsdatascience.com/reproducing-google-research-football-rl-results-ac75cf17190e
+- Форум https://groups.google.com/g/google-research-football
+- Описание policy PPO2 - https://openai.com/blog/openai-baselines-ppo/#ppo
