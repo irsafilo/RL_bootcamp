@@ -11,10 +11,12 @@ python3 -u -m gfootball.examples.run_ppo2 \
   --reward_experiment scoring \
   --policy impala_cnn
 ```
-2) Обучение со своей архитектурой
+2) Обучение со своей архитектурой.
+
 Также можно обучать модели со своей архитектурой. Для этого на виртульной машине нужно изменить файлик
 ```/football/gfootball/examples/models.py``` и зарегистрировать свою архитектуру.
 
+Пример:
 ```
 @register('my_impala_cnn')
 def my_impala_cnn():
@@ -29,7 +31,7 @@ flags.DEFINE_enum('policy', 'cnn', ['cnn', 'lstm', 'mlp', 'impala_cnn',
 
 ```
 3) Параметры модели.
-Можно изменять параметры модели.Поподробнее прочитать про них можно здесь
+Можно изменять параметры модели. Поподробнее прочитать про них можно здесь:
 https://github.com/openai/baselines/tree/master/baselines/ppo2
 Пример запуска:
 ```
@@ -52,12 +54,12 @@ https://github.com/openai/baselines/tree/master/baselines/ppo2
   ```"$@" --dump_scores 2>&1 | tee repro_checkpoint_easy.txt``` - сохранение дампов обучения и логирования обучения в файлик 
   repro_checkpoint_easy.txt
   
-4) Дообучение модели
-Для дообучение модели нужно использовать параметр ```--load_path```, который
+4) Дообучение модели.
+Для дообучения модели нужно использовать параметр ```--load_path```, который
 указывает путь к уже обученной модели.
 
 5) Обучение против противника.
-Также есть возможность обучать модель в среде против противника
+Также есть возможность обучать модель в среде против противника.
 Для этого в файлик ```/football/gfootball/examples/run_ppo2.py``` в функции 
 ```
 def create_single_football_env(iprocess):
