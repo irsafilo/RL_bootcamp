@@ -9,7 +9,7 @@ python3 -m venv football-env
 source football-env/bin/activate
 pip3 install scikit-build
 pip3 install .
-python3 -m pip install —upgrade pip setuptools
+python3 -m pip install --pgrade pip setuptools
 pip3 install tensorflow-gpu==1.15.*
 pip3 install dm-sonnet==1.*
 pip3 install git+https://github.com/openai/baselines.git@master
