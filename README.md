@@ -104,3 +104,9 @@ export DISPLAY=:1
 python3 -m gfootball.play_game --players 
 "ppo2_cnn:left_players=1,policy=gfootball_impala_cnn,checkpoint=/tmp/openai-date/checkpoints/0*;ppo2_cnn:right_players=1,policy=cnn,checkpoint=/tmp/openai-{дата-время}/checkpoints/{шаг}"
 ```
+
+# Полезные материалы
+Репозиторий Google Football Research - https://github.com/google-research/football
+Полезная статья - https://towardsdatascience.com/reproducing-google-research-football-rl-results-ac75cf17190e
+Форум https://groups.google.com/g/google-research-football
+Описание policy PPO2 - https://openai.com/blog/openai-baselines-ppo/#ppo
