@@ -20,7 +20,6 @@ python3 -u -m gfootball.examples.run_ppo2 \
 ```
 @register('my_impala_cnn')
 def my_impala_cnn():
-
 ```
 Также нужно изменить файлик ```/football/gfootball/examples/run_ppo2.py```
 В строчке, приведенный ниже, нужно добавить имя своей архитектуры.
