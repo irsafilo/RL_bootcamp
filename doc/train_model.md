@@ -31,6 +31,7 @@ flags.DEFINE_enum('policy', 'cnn', ['cnn', 'lstm', 'mlp', 'impala_cnn',
 
 ```
 3) Параметры модели.
+
 Можно изменять параметры модели. Поподробнее прочитать про них можно здесь:
 https://github.com/openai/baselines/tree/master/baselines/ppo2
 Пример запуска:
@@ -55,20 +56,23 @@ https://github.com/openai/baselines/tree/master/baselines/ppo2
   repro_checkpoint_easy.txt
   
 4) Дообучение модели.
+
 Для дообучения модели нужно использовать параметр ```--load_path```, который
 указывает путь к уже обученной модели.
 
 5) Обучение против противника.
+
 Также есть возможность обучать модель в среде против противника.
-Для этого в файлик ```/football/gfootball/examples/run_ppo2.py``` в функции 
+Для этого в файлик ```/football/gfootball/examples/run_ppo2.py``` в функции create_single_football_env
+надо добавить  параметр ```--extra_players```.
+
+Пример:
 ```
 def create_single_football_env(iprocess):
   """Creates gfootball environment."""
   print('create')
-  env = football_env.create_environment(...
-  ```
-надо добавить  параметр ```--extra_players```. 
-Пример:
-```extra_players=['ppo2_cnn:right_players=1,policy=cnn,checkpoint=$path_to_model']```
+  env = football_env.create_environment(..., extra_players=['ppo2_cnn:right_players=1,policy=cnn,checkpoint=$path_to_model'])
+```
+
 
  
