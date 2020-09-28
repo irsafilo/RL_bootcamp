@@ -50,7 +50,7 @@ https://github.com/openai/baselines/tree/master/baselines/ppo2
   "$@" --dump_scores 2>&1 | tee repro_checkpoint_easy.txt
   ```
   ```"$@" --dump_scores 2>&1 | tee repro_checkpoint_easy.txt``` - сохранение дампов обучения и логирования обучения в файлик 
-  ```repro_checkpoint_easy.txt```
+  repro_checkpoint_easy.txt
   
 4) Дообучение модели
 Для дообучение модели нужно использовать параметр ```--load_path```, который
