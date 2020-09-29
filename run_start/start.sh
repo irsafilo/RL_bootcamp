@@ -2,6 +2,7 @@ sudo apt-get update
 sudo apt-get -y install git cmake build-essential libgl1-mesa-dev libsdl2-dev \
 libsdl2-image-dev libsdl2-ttf-dev libsdl2-gfx-dev libboost-all-dev \
 libdirectfb-dev libst-dev mesa-utils xvfb x11vnc libsdl-sge-dev python3-pip
+cd ..
 git clone https://github.com/google-research/football.git
 cd football
 sudo apt-get -y install python3-venv
