@@ -38,6 +38,8 @@ pip3 install absl-py
  sudo MESA_GL_VERSION_OVERRIDE=3.2 MESA_GLSL_VERSION_OVERRIDE=150 python3 -m gfootball.play_game --action_set=full
  ```
  В случае проблем с tensorflow может помочь обновление tensorflow-gpu до более новых версий.
+ 
+ При ренедеринге для избежания зависания и ошибок нужно не шевелить мышкой и тачпадом и передвигать экран игры.
 
 # Инструкция запуска на виртуальной машине
 
