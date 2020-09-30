@@ -1,5 +1,12 @@
 # Baseline
 
+0) Выполним на виртуальной машине следующие команды для начала работы с моделью
+```
+cd football
+source football-env/bin/activate
+Xvfb :1 -screen 0 1280x720x24+32 -fbdir /var/tmp &
+export DISPLAY=:1
+```
 1) Сделаем модель с новой архитектурой cnn_small.
 
 
@@ -33,8 +40,37 @@ flags.DEFINE_enum('policy', 'cnn', ['cnn', 'lstm', 'mlp', 'impala_cnn',
 2) Обучим модель с нашей архитектурой и наградой 'scoring,chekpoints'.
 Также добавим параметр --dump_scores 2>&1 для сохранения dump-в обучения.
 Также будем логировать все в файлик repro_checkpoint_easy.txt.
-Важно, запускать обучения нужно из директории football
+Важно, запускать обучения нужно из директории football.
 ```
 python3 -u -m gfootball.examples.run_ppo2   --level 11_vs_11_easy_stochastic   --reward_experiment scoring,checkpoints   --policy cnn_small   --cliprange 0.115   --gamma 0.997   --ent_coef 0.00155   --num_timesteps 100000   --max_grad_norm 0.76   --lr 0.00011879   --num_envs 16   --noptepochs 2   --nminibatches 4   --nsteps 512   "$@"  --dump_scores 2>&1 | tee small_repro_checkpoint_easy.txt .
 ```
 В процессе обучения будет выводиться таблица с прогрессом.
+Done.
+--------------------------------------
+| eplenmean               | 3e+03    |
+| eprewmean               | -1.32    |
+| fps                     | 350      |
+| loss/approxkl           | 3.65e-08 |
+| loss/clipfrac           | 0        |
+| loss/policy_entropy     | 2.94     |
+| loss/policy_loss        | -2.8e-06 |
+| loss/value_loss         | 0.00157  |
+| misc/explained_variance | -0.0666  |
+| misc/nupdates           | 6        |
+| misc/serial_timesteps   | 3.07e+03 |
+| misc/time_elapsed       | 133      |
+| misc/total_timesteps    | 4.92e+04 |
+--------------------------------------
+Saving to /tmp/openai-2020-09-30-20-57-08-906834/checkpoints/00001
+
+После каждых n шагов модель будет сохраняться в эту директорию.
+
+3) Посмотрим, как наша модель научилась играть.
+
+Для этого также в директории football запустим play_game.
+
+```
+python3 -m gfootball.play_game --players "ppo2_cnn:left_players=1,policy=cnn_small,checkpoint=/tmp/openai-2020-09-30-20-57-08-906834/checkpoints/00001;ppo2_cnn:right_players=1,policy=cnn_small,checkpoint=/tmp/openai-2020-09-30-20-57-08-906834/checkpoints/00001"
+```
+
+
