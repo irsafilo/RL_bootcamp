@@ -46,23 +46,6 @@ python3 -u -m gfootball.examples.run_ppo2   --level 11_vs_11_easy_stochastic   -
 ```
 В процессе обучения будет выводиться таблица с прогрессом.
 Done.
---------------------------------------
-| eplenmean               | 3e+03    |
-| eprewmean               | -1.32    |
-| fps                     | 350      |
-| loss/approxkl           | 3.65e-08 |
-| loss/clipfrac           | 0        |
-| loss/policy_entropy     | 2.94     |
-| loss/policy_loss        | -2.8e-06 |
-| loss/value_loss         | 0.00157  |
-| misc/explained_variance | -0.0666  |
-| misc/nupdates           | 6        |
-| misc/serial_timesteps   | 3.07e+03 |
-| misc/time_elapsed       | 133      |
-| misc/total_timesteps    | 4.92e+04 |
---------------------------------------
-Saving to /tmp/openai-2020-09-30-20-57-08-906834/checkpoints/00001
-
 После каждых n шагов модель будет сохраняться в эту директорию.
 
 3) Посмотрим, как наша модель научилась играть.
