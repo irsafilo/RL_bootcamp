@@ -1,6 +1,7 @@
 # Baseline
 
-1) Обучим модель с новой архитектурой cnn_small.
+1) Сделаем модель с новой архитектурой cnn_small.
+
 
 Архитектура cnn_small:
 ```
@@ -18,11 +19,22 @@ def cnn_small(**conv_kwargs):
     return network_fn
 ```
 Зарегистрируем ее в файлик /football/gfootball/examples/models.py .
-
+Также добавим в файлик строчки загрузки необходимых библиотек.
+```
+from baselines.a2c.utils import conv, fc, conv_to_fc, batch_to_seq, seq_to_batch
+```
 Добавим также нашу модель в файлик /football/gfootball/examples/run_ppo2.py .
 
 ```
 flags.DEFINE_enum('policy', 'cnn', ['cnn', 'lstm', 'mlp', 'impala_cnn',
-                                    'gfootball_impala_cnn', *'cnn_small'*]
+                                    'gfootball_impala_cnn', 'cnn_small']
                   'Policy architecture')
-'''
+```
+2) Обучим модель с нашей архитектурой и наградой 'scoring,chekpoints'.
+Также добавим параметр --dump_scores 2>&1 для сохранения dump-в обучения.
+Также будем логировать все в файлик repro_checkpoint_easy.txt.
+Важно, запускать обучения нужно из директории football
+```
+python3 -u -m gfootball.examples.run_ppo2   --level 11_vs_11_easy_stochastic   --reward_experiment scoring,checkpoints   --policy cnn_small   --cliprange 0.115   --gamma 0.997   --ent_coef 0.00155   --num_timesteps 100000   --max_grad_norm 0.76   --lr 0.00011879   --num_envs 16   --noptepochs 2   --nminibatches 4   --nsteps 512   "$@"  --dump_scores 2>&1 | tee small_repro_checkpoint_easy.txt .
+```
+В процессе обучения будет выводиться таблица с прогрессом.
