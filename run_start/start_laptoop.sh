@@ -7,11 +7,11 @@ cd football
 sudo apt-get install python3-venv
 python3 -m venv football-env
 source football-env/bin/activate
-pip3 install scikit-build
-pip3 install .
+sudo pip3 install scikit-build
+sudo pip3 install .
 python3 -m pip install --upgrade pip setuptools
-pip3 install tensorflow-gpu==1.15.*
-pip3 install dm-sonnet==1.*
-pip3 install git+https://github.com/openai/baselines.git@master
-pip3 install absl-py
+sudo pip3 install tensorflow-gpu==1.15.*
+sudo pip3 install dm-sonnet==1.*
+sudo pip3 install git+https://github.com/openai/baselines.git@master
+sudo pip3 install absl-py
 
