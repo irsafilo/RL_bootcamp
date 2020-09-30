@@ -100,8 +100,7 @@ export DISPLAY=:1
 4) Попробовать запустить игру можно так.
   Наша модель будет играть против нашей же модели.
 ```
-python3 -m gfootball.play_game --players 
-"ppo2_cnn:left_players=1,policy=gfootball_impala_cnn,checkpoint=/tmp/openai-date/checkpoints/0*;ppo2_cnn:right_players=1,policy=cnn,checkpoint=/tmp/openai-{дата-время}/checkpoints/{шаг}"
+python3 -m gfootball.play_game --players "ppo2_cnn:left_players=1,policy=gfootball_impala_cnn,checkpoint=/tmp/openai date/checkpoints/0*;ppo2_cnn:right_players=1,policy=cnn,checkpoint=/tmp/openai-{дата-время}/checkpoints/{шаг}"
 ```
 
 # Полезные материалы
