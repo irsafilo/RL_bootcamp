@@ -15,3 +15,4 @@ https://habr.com/ru/post/327630/
 - Параметры PPO2 в openai - https://github.com/openai/baselines/blob/master/baselines/ppo2/ppo2.py
 - Архитектуры - https://github.com/openai/baselines/blob/master/baselines/common/models.py
 - Статья Google на архиве https://arxiv.org/pdf/1907.11180.pdf
+- Cсылка на создание среды football_engine - https://github.com/google-research/football/blob/e2b9d306ae13475bed67cae04a298fbe8e5e9735/gfootball/env/__init__.py
