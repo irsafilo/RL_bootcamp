@@ -2,8 +2,9 @@
 
 # Утилиты
 На всех виртуальных машинах стоит tmux.
-https://habr.com/ru/post/327630/
 Это удобная утилита для переключения между сессиями. На всякий случай приложил ссылку на основные команды.
+https://habr.com/ru/post/327630/
+Команда для мониторинга GPU - ```nvidia-smi```
 
 # Материалы
 - Репозиторий Google Football Research - https://github.com/google-research/football
