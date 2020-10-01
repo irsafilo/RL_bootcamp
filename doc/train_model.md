@@ -4,7 +4,9 @@
 
 В рамках стратегии PPO2 (https://openai.com/blog/openai-baselines-ppo/#ppo)
 можно обучать модель с разными архитектурами - *cnn, impala_cnn, mlp, lstm, gfotball_impala_cnn*.
-Их можно передать в параметре ```--policy```.
+Этот список можно передать тэком для параметра модели. Имя архитектуры можно передать в параметре ```--policy```.
+О других архитектурах можно почитать в ссылке про архитектуры.
+https://github.com/openai/baselines/blob/master/baselines/common/models.py
 ```
 python3 -u -m gfootball.examples.run_ppo2 \
   --level 11_vs_11_easy_stochastic \
