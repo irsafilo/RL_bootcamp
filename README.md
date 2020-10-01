@@ -73,6 +73,8 @@ export DISPLAY=:1
   ```
   cd football
   source football-env/bin/activate
+  Xvfb :1 -screen 0 1280x720x24+32 -fbdir /var/tmp &
+  export DISPLAY=:1
   ```
 3) Проверка обучения
 Пример того как, можно обучать модель в рамках policy PPO2. Нужно проверить, правильно ли все поставилось.
