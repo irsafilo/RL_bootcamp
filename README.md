@@ -14,13 +14,13 @@ cd football
 sudo apt-get -y install python3-venv
 python3 -m venv football-env
 source football-env/bin/activate
-pip3 install scikit-build
-pip3 install .
+sudo pip3 install scikit-build
+sudo pip3 install .
 python3 -m pip install --upgrade pip setuptools
-pip3 install tensorflow-gpu==1.15.*
-pip3 install dm-sonnet==1.*
-pip3 install git+https://github.com/openai/baselines.git@master
-pip3 install absl-py
+sudo pip3 install tensorflow-gpu==1.15.*
+sudo pip3 install dm-sonnet==1.*
+sudo pip3 install git+https://github.com/openai/baselines.git@master
+sudo pip3 install absl-py
 ```
 2) Выполнить команду
   ```sudo bash start_laptop.sh```
@@ -39,7 +39,7 @@ pip3 install absl-py
  ```
  В случае проблем с tensorflow может помочь обновление tensorflow-gpu до более новых версий.
  
- При ренедеринге для избежания зависания и ошибок нужно не шевелить мышкой и тачпадом и передвигать экран игры.
+ При ренедеринге для избежания зависания и ошибок нужно не шевелить мышкой и тачпадом и не передвигать экран игры.
 
 # Инструкция запуска на виртуальной машине
 
@@ -75,7 +75,7 @@ export DISPLAY=:1
   source football-env/bin/activate
   ```
 3) Проверка обучения
-Пример того как, можно обучать модель в рамках policy PPO2. Нужно проверить правильно ли, все поставилось.
+Пример того как, можно обучать модель в рамках policy PPO2. Нужно проверить, правильно ли все поставилось.
 ```
   python3 -u -m gfootball.examples.run_ppo2 \
   --level 11_vs_11_easy_stochastic \
