@@ -8,7 +8,7 @@ python3 -m gfootball.play_game --players
 ```
 - Наша модель будет играть против гугловской модели.
 ```
-python3 -m gfootball.play_game --players "ppo2_cnn:left_players=1,policy=gfootball_impala_cnn,checkpoint=/tmp/openai-{дата-время}/checkpoints/{шаг};ppo2_cnn:right_players=1,policy=cnn,checkpoint=/tmp/openai-date/checkpoints/11_vs_11_easy_stochastic_v2"
+python3 -m gfootball.play_game --players "ppo2_cnn:left_players=1,policy=impala_cnn,checkpoint=/tmp/openai-{дата-время}/checkpoints/{шаг};ppo2_cnn:right_players=1,policy=gfootball_impala_cnn,checkpoint=/tmp/openai-date/checkpoints/11_vs_11_easy_stochastic_v2"
 ```
 Гугловская модель лежит в папке ```/RL_bootcamp/models/```. 
 Для запуска игры моделей в режиме policy PPO2 надо явно указывать policy и checkpoint.
